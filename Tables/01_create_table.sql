@@ -31,3 +31,13 @@ CREATE TABLE people4 (
     created datetime,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE people5 (
+	id int,
+    name varchar(100) NOT NULL,
+    age int,
+    email varchar(50),
+    created datetime,
+    PRIMARY KEY(id),
+    CHECK(age >= 18)
+);
