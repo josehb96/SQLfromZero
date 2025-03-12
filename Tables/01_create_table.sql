@@ -51,3 +51,13 @@ CREATE TABLE people6 (
     PRIMARY KEY(id),
     CHECK(age >= 18)
 );
+
+CREATE TABLE people7 (
+	id int NOT NULL AUTO_INCREMENT,
+    name varchar(100) NOT NULL,
+    age int,
+    email varchar(50),
+    created datetime DEFAULT CURRENT_TIMESTAMP(),
+    PRIMARY KEY(id),
+    CHECK(age >= 18)
+);
