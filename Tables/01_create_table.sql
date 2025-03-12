@@ -22,3 +22,12 @@ CREATE TABLE people3 (
     created datetime,
     UNIQUE(id)
 );
+
+CREATE TABLE people4 (
+	id int,
+    name varchar(100) NOT NULL,
+    age int,
+    email varchar(50),
+    created datetime,
+    PRIMARY KEY(id)
+);
