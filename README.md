@@ -2,8 +2,6 @@
 
 ## 1. Bases de datos SQL
 
----
-
 - SQL es un lenguaje de consulta
 - SQL → Structure Query Language
 
@@ -23,8 +21,6 @@ Aún así no tenemos porque elegir una u otra, ya que en empresas de gran tamañ
 
 ## 2. Sistema de gestión de base de datos (DBMS)
 
----
-
 DBMS → DataBase Management System
 
 Los principales sistemas de gestión de bases de datos son:
@@ -40,8 +36,6 @@ Los principales sistemas de gestión de bases de datos son:
 Donde esté el estándar ISO/IEC 9075-1 da igual qué gestor de bases de datos usemos, por lo que la gran mayoría de los mecanismos son los del estándar.
 
 ## 3. Fundamentos de SLQ y bases de datos
-
----
 
 Una de las mejores páginas para aprender fundamentos a nivel de desarrollo de software es w3schools. Y según Brais es una de las mejores referencias que podemos consultar para aprender las bases de SQL.
 
@@ -59,8 +53,6 @@ Para consultarlos en profundidad: [https://www.w3schools.com/sql/sql_datatypes.a
 
 ## 4. Configuración e instalación
 
----
-
 Vamos a trabajar con RDBMS que básicamente es un gestor de bases de datos relacional. Concretamente con MySQL.
 
 En este caso, como voy a trabajar en Kubuntu 24.10, voy a seguir las instrucciones de instalación de la página oficial de documentación de Ubuntu: [https://documentation.ubuntu.com/server/how-to/databases/install-mysql/](https://documentation.ubuntu.com/server/how-to/databases/install-mysql/)
@@ -73,15 +65,13 @@ Comprobamos si el servicio mysql está funcionando:
 
 Comprobamos la versión de mysql instalada:
 
-![image.png](Images/image1.png)
+![image.png](Images/image 1.png)
 
 ## 5. Primeros pasos
 
----
-
 Con todo esto ya podemos interactuar con una base de datos.
 
-![image.png](Images/image2.png)
+![image.png](Images/image 2.png)
 
 ¿Podemos manejar una base de datos sólo con comados?
 
@@ -91,15 +81,13 @@ Sí.
 
 Sólo si somos muy pros o si tenemos que hacer algo muy concreto igual que desde una herramienta o interfaz gráfica quizás no somos capaces de resolver tan fácil.
 
-![image.png](Images/image3.png)
+![image.png](Images/image 3.png)
 
 Como se puede ver, mysql ya tiene 4 bases de datos instaladas por defecto.
 
 Con **exit** podemos salir del terminal.
 
 ## 6. Conexión y cliente SQL
-
----
 
 Existen infinidad de aplicaciones para interactuar con la base de datos, por ejemplo:
 
@@ -111,47 +99,45 @@ Existen infinidad de aplicaciones para interactuar con la base de datos, por eje
 
 Para el curso vamos a utilizar la herramienta de bases de datos propia de la gente que está desarrollando mysql: https://dev.mysql.com/downloads/workbench
 
-![image.png](Images/image4.png)
+![image.png](Images/image 4.png)
 
 Pero al tratar de conectarme me surgió este error (Estaba usando Kubuntu 24.10)
 
-![image.png](Images/image5.png)
+![image.png](Images/image 5.png)
 
 Y al parecer (según ChatGPT), Ubuntu en algunas versiones, configura MySQL para que el usuario **root** use **auth_socket**, lo que significa que solo puedo identificarse desde la terminal con **sudo**.
 
-![image.png](Images/image6.png)
+![image.png](Images/image 6.png)
 
-![image.png](Images/image7.png)
+![image.png](Images/image 7.png)
 
 Ahora si volvemos a intentar realizar la conexión:
 
-![image.png](Images/image8.png)
+![image.png](Images/image 8.png)
 
 Creamos una nueva base de datos o esquema de base de datos llamado hello_mysql:
 
-![image.png](Images/image9.png)
+![image.png](Images/image 9.png)
 
 ## 7. Inicialización de datos
 
----
-
 Creamos una nueva conexión que nos dirija directamente a la base de datos que acabamos de crear:
 
-![image.png](Images/image10.png)
+![image.png](Images/image 10.png)
 
 Y ya la tenemos disponible:
 
-![image.png](Images/image11.png)
+![image.png](Images/image 11.png)
 
 Usamos esta nueva conexión y creamos una nueva tabla en “hello_mysql”. usando la interfaz gráfica.
 
-![image.png](Images/image12.png)
+![image.png](Images/image 12.png)
 
 Nota: El tipo de dato “date” representa una fecha sin hora
 
-![image.png](Images/image13.png)
+![image.png](Images/image 13.png)
 
-![image.png](Images/image14.png)
+![image.png](Images/image 14.png)
 
 Si nos fijamos en los iconos, vemos una “i” que sirve para ver la información de la tabla, una “llave” que sirve para modificar directamente desde la interfaz dicha tabla y el icono de la derecha sirve para consultar el contenido de dicha tabla.
 
@@ -161,11 +147,9 @@ Nota: El auto increment incrementa a partir del último identificador que nosotr
 
 Rellenamos la tabla usando la interfaz:
 
-![image.png](Images/image15.png)
+![image.png](Images/image 15.png)
 
 ## 8. Consulta de datos: SELECT
-
----
 
 <aside>
 💡
@@ -186,11 +170,7 @@ SELECT user_id, name FROM users;
 
 ## 9. Modificadores: Parte 1
 
----
-
 ### 9.1 DISTINCT
-
----
 
 <aside>
 💡
@@ -207,21 +187,19 @@ SELECT DISTINCT age from users;
 SELECT DISTINCT name from users;
 ```
 
-![image.png](Images/image16.png)
+![image.png](Images/image 16.png)
 
 Como se puede ver a pesar de que teníamos 2 users con la misma edad, no nos muestra el 15 dos veces, ya que únicamente muestra resultados que sean distintos.
 
 ### 9.2 WHERE
 
----
-
 Con el WHERE estamos limitando cuál es el criterio de los datos que nosotros queremos recuperar.
 
-![image.png](Images/image17.png)
+![image.png](Images/image 17.png)
 
-![image.png](Images/image18.png)
+![image.png](Images/image 18.png)
 
-![image.png](Images/image19.png)
+![image.png](Images/image 19.png)
 
 ```sql
 SELECT * FROM users WHERE age = 15;
@@ -233,8 +211,6 @@ SELECT DISTINCT age FROM users WHERE age = 15;
 
 ### 9.3 ORDER BY
 
----
-
 ORDER BY nos permite ordenar los resultados.
 
 <aside>
@@ -244,17 +220,17 @@ Por defecto se aplica el orden ASCENDENTE
 
 </aside>
 
-![image.png](Images/image20.png)
+![image.png](Images/image 20.png)
 
-![image.png](Images/image21.png)
+![image.png](Images/image 21.png)
 
 Vamos a añadir el mismo email de Sara a Carlos Azaustre:
 
-![image.png](Images/image22.png)
+![image.png](Images/image 22.png)
 
 Por lo tanto si lanzamos esta consulta:
 
-![image.png](Images/image23.png)
+![image.png](Images/image 23.png)
 
 ```sql
 SELECT * FROM users ORDER BY age;
@@ -274,7 +250,7 @@ SELECT name FROM users WHERE email='sara@gmail.com' ORDER BY age DESC;
 
 Modificamos el email de Miriam para que sea un gmail:
 
-![image.png](Images/image24.png)
+![image.png](Images/image 24.png)
 
 El comando LIKE nos sirve para definir una especie de contiene o se parece a, donde no tenemos el valor final.
 
@@ -292,11 +268,11 @@ El “%” significa que antes de él en la cadena de texto nos vale cualquier c
 
 </aside>
 
-![image.png](Images/image25.png)
+![image.png](Images/image 25.png)
 
-![image.png](Images/image26.png)
+![image.png](Images/image 26.png)
 
-![image.png](Images/image27.png)
+![image.png](Images/image 27.png)
 
 ```sql
 SELECT * FROM users WHERE email LIKE '%gmail.com';
@@ -308,19 +284,17 @@ SELECT * FROM users WHERE email LIKE '%@%';
 
 ### 9.5 AND, OR, NOT
 
----
-
 Si queremos consultar aquellos usuarios cuyo email no se “sara@gmail.com”:
 
-![image.png](Images/image28.png)
+![image.png](Images/image 28.png)
 
 Añadiendo la condición AND para que sólo muestre los que tengan dicho email y cuya edad sea 15 años:
 
-![image.png](Images/image29.png)
+![image.png](Images/image 29.png)
 
 Y si queremos consultar aquellos usuarios que cumplan una u otra condición, o ambas, entonces usamos OR:
 
-![image.png](Images/image30.png)
+![image.png](Images/image 30.png)
 
 ```sql
 SELECT * FROM users WHERE NOT email = 'sara@gmail.com';
@@ -332,17 +306,15 @@ SELECT * FROM users WHERE NOT email = 'sara@gmail.com' OR age = 15;
 
 ### 9.6 LIMIT
 
----
-
 LIMIT sirve para limitar el número de resultados que nos va a mostrar la consulta.
 
 Un par de ejemplos:
 
-![image.png](Images/image31.png)
+![image.png](Images/image 31.png)
 
 Esto sirve para casos donde la base de datos tiene una gran cantidad de datos (por ejemplo millones de usuarios) y queremos realizar una consulta, dado que de ser así, tardaría mucho en realizar la consulta.
 
-![image.png](Images/image32.png)
+![image.png](Images/image 32.png)
 
 ```sql
 SELECT * FROM users LIMIT 3;
@@ -352,11 +324,7 @@ SELECT * FROM users WHERE NOT email = 'sara@gmail.com' OR age = 15 LIMIT 2;
 
 ## 10. Modificadores: Parte 2
 
----
-
 ### 10.1 Comentarios
-
----
 
 ```sql
 -- Comentario en una línea
@@ -372,9 +340,7 @@ multilínea
 
 ### 10.2 NULL
 
----
-
-![image.png](Images/image33.png)
+![image.png](Images/image 33.png)
 
 ```sql
 SELECT * FROM users WHERE email IS NULL;
@@ -386,9 +352,7 @@ SELECT * FROM users WHERE email IS NOT NULL AND age = 15;
 
 ### 10.3 MIN, MAX
 
----
-
-![image.png](Images/image34.png)
+![image.png](Images/image 34.png)
 
 ```sql
 SELECT MAX(age) FROM users;
@@ -398,9 +362,7 @@ SELECT MIN(age) FROM users;
 
 ### 10.4 COUNT
 
----
-
-![image.png](Images/image35.png)
+![image.png](Images/image 35.png)
 
 ```sql
 SELECT COUNT(*) FROM users;
@@ -410,9 +372,7 @@ SELECT COUNT(age) FROM users;
 
 ### 10.5 SUM
 
----
-
-![image.png](Images/image36.png)
+![image.png](Images/image 36.png)
 
 ```sql
 SELECT SUM(age) FROM users;
@@ -420,9 +380,7 @@ SELECT SUM(age) FROM users;
 
 ### 10.6 AVG
 
----
-
-![image.png](Images/image37.png)
+![image.png](Images/image 37.png)
 
 ```sql
 SELECT AVG(age) FROM users;
@@ -430,11 +388,9 @@ SELECT AVG(age) FROM users;
 
 ### 10.7 IN
 
----
-
 El comando IN es capaz de hacer un filtrado en el que nosotros conocemos cuáles son precisamente los datos por los que hay que filtrar. Es una especie de límite basado en uno o varios elementos que nosotros conocemos.
 
-![image.png](Images/image38.png)
+![image.png](Images/image 38.png)
 
 ```sql
 SELECT * FROM users WHERE name IN ('brais', 'sara');
@@ -442,19 +398,15 @@ SELECT * FROM users WHERE name IN ('brais', 'sara');
 
 ### 10.8 BETWEEN
 
----
-
 Este comando nos sirve para encontrar resultados que se comprenden entre 2 valores, un valor mínimo y un valor máximo.
 
-![image.png](Images/image39.png)
+![image.png](Images/image 39.png)
 
 ```sql
 SELECT * FROM users WHERE age BETWEEN 20 AND 30;
 ```
 
 ### 10.9 ALIAS
-
----
 
 <aside>
 💡
@@ -463,7 +415,7 @@ En SQL podemos usar tanto comillas simples como dobles.
 
 </aside>
 
-![image.png](Images/image40.png)
+![image.png](Images/image 40.png)
 
 ```sql
 SELECT name, init_date AS "Fecha de inicio en programación" FROM users WHERE name = "Brais";
@@ -473,17 +425,15 @@ SELECT name, init_date AS 'Fecha de inicio en programación' FROM users WHERE na
 
 ### 10.10 CONCAT
 
----
-
 Existe una ligera variación dentro de ALIAS que nos permite concatenar cadenas, que nos permite concatenar atributos, que nos permite concatenar columnas.
 
 Por ejemplo, ¿Cómo podríamos concatenar en una misma columna el nombre y el apellido?
 
-![image.png](Images/image41.png)
+![image.png](Images/image 41.png)
 
-![image.png](Images/image42.png)
+![image.png](Images/image 42.png)
 
-![image.png](Images/image43.png)
+![image.png](Images/image 43.png)
 
 ```sql
 SELECT name, init_date AS "Fecha de inicio en programación" FROM users WHERE name = "Brais";
@@ -499,21 +449,19 @@ SELECT CONCAT('Nombre: ', name, ' Apellidos: ', surname) AS "Nombre completo" FR
 
 ### 10.11 GROUP BY
 
----
-
 Agrupa filas que tienen mismos valores.
 
 Buscamos las máximas edades de cada grupo:
 
-![image.png](Images/image44.png)
+![image.png](Images/image 44.png)
 
 Contamos las edades:
 
-![image.png](Images/image45.png)
+![image.png](Images/image 45.png)
 
 Contamos las edades y además ordenamos de forma ascendente:
 
-![image.png](Images/image46.png)
+![image.png](Images/image 46.png)
 
 Y si además ponemos una restricción para que sólo nos muestre las edades superiores a 15:
 
@@ -529,8 +477,6 @@ SELECT COUNT(age), age FROM users WHERE age > 15 GROUP BY age ORDER BY age ASC;
 
 ### 10.12 HAVING
 
----
-
 Sirve para crear limitaciones a los resultados de agrupaciones.
 
 <aside>
@@ -540,7 +486,7 @@ Los HAVING se usan bastante con los GROUP BY.
 
 </aside>
 
-![image.png](Images/image47.png)
+![image.png](Images/image47 .png)
 
 ```sql
 SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
@@ -548,19 +494,17 @@ SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
 
 ### 10.13 CASE
 
----
-
 Un CASE nos permite ejecutar una lógica concreta en función de una condición.
 
-![image.png](Images/image48.png)
+![image.png](Images/image48 .png)
 
-![image.png](Images/image49.png)
+![image.png](Images/image49 .png)
 
 Añadimos un nuevo usuario a la tabla users llamado “Kontrol” que tiene 18 años.
 
-![image.png](Images/image50.png)
+![image.png](Images/image50 .png)
 
-![image.png](Images/image51.png)
+![image.png](Images/image51 .png)
 
 ```sql
 SELECT *,
@@ -588,9 +532,7 @@ FROM users;
 
 ### 10.14 IFNULL
 
----
-
-![image.png](Images/image52.png)
+![image.png](Images/image 52.png)
 
 ```sql
 SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
@@ -598,23 +540,17 @@ SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
 
 ### 10.15 Otros modificadores
 
----
-
 [https://www.w3schools.com/sql/sql_ref_mysql.asp](https://www.w3schools.com/sql/sql_ref_mysql.asp)
 
 ## 11. Escritura de datos
 
----
-
 ### 11.1 INSERT
-
----
 
 Vemos como antes de la última ejecución, si intentábamos insertar el user_id 7 nos daba error, puesto que en la clave primaria no puede haber ni nulos ni duplicados.
 
-![image.png](Images/image53.png)
+![image.png](Images/image 53.png)
 
-![image.png](Images/image54.png)
+![image.png](Images/image 54.png)
 
 ```sql
 INSERT INTO users (user_id, name, surname) VALUES (8, 'María', 'López');
@@ -626,11 +562,9 @@ INSERT INTO users (user_id, name, surname) VALUES (11, 'El', 'Merma');
 
 Después de los inserts el estado de la tabla es el siguiente:
 
-![image.png](Images/image55.png)
+![image.png](Images/image 55.png)
 
 ### 11.2 UPDATE
-
----
 
 <aside>
 💡
@@ -639,7 +573,7 @@ Los UPDATE siempre se hacen con una regla de filtrado
 
 </aside>
 
-![image.png](Images/image56.png)
+![image.png](Images/image 56.png)
 
 ```sql
 UPDATE users SET age = '21' WHERE user_id = 11;
@@ -651,11 +585,9 @@ UPDATE users SET age = 20, init_date = '2020-10-12' WHERE user_id = 11;
 
 Tras ejecutar las sentencias UPDATE la tabla users nos queda así:
 
-![image.png](Images/image57.png)
+![image.png](Images/image 57.png)
 
 ### 11.3 DELETE
-
----
 
 <aside>
 💡
@@ -672,11 +604,7 @@ DELETE from users WHERE user_id = 11;
 
 ## 12. Administración de la base de datos
 
----
-
 ### 12.1 CREATE DATABASE
-
----
 
 ```sql
 CREATE DATABASE test;
@@ -684,25 +612,19 @@ CREATE DATABASE test;
 
 ### 12.2 DROP DATABASE
 
----
-
 ```sql
 DROP DATABASE test;
 ```
 
 ## 13. Administración de tablas
 
----
-
 Para no interferir con el trabajo realizado previamente, vamos a crear de nuevo la base de datos “test” y sobre esta vamos a empezar a trabajar.
 
 Además, vamos a crear una nueva conexión en MySQL Workbench que vaya directamente a la base de datos “test”:
 
-![image.png](Images/image58.png)
+![image.png](Images/image 58.png)
 
 ### 13.1 CREATE TABLE
-
----
 
 ```sql
 CREATE TABLE people (
@@ -714,11 +636,9 @@ CREATE TABLE people (
 );
 ```
 
-![image.png](Images/image59.png)
+![image.png](Images/image 59.png)
 
 ### 13.2 NOT NULL
-
----
 
 NOT NULL es una restricción a nivel de columna que nos impide insestar datos nulos en las filas de dicha columna.
 
@@ -734,11 +654,9 @@ CREATE TABLE people2 (
 );
 ```
 
-![image.png](Images/image60.png)
+![image.png](Images/image 60.png)
 
 ### 13.3 UNIQUE
-
----
 
 Con la restricción UNIQUE a nivel de columna, lo que conseguimos es que no puedan haber duplicados en dicha columna, es decir, no podremos insertar 2 veces el mismo valor en dicha columna.
 
@@ -753,11 +671,9 @@ CREATE TABLE people3 (
 );
 ```
 
-![image.png](Images/image61.png)
+![image.png](Images/image 61.png)
 
 ### 13.4 PRIMARY KEY
-
----
 
 PRIMARY KEY nos sirve para indicar cuál o cuales son los identificadores principales de la tabla.
 
@@ -776,8 +692,6 @@ CREATE TABLE people4 (
 
 ### 13.5 CHECK
 
----
-
 CHECK nos sirve para añadir restricciones a la hora de crear una tabla.
 
 ```sql
@@ -794,11 +708,9 @@ CREATE TABLE people5 (
 
 De hecho si comprobamos el script de creación de la tabla:
 
-![image.png](Images/image62.png)
+![image.png](Images/image 62.png)
 
 ### 13.6 DEFAULT
-
----
 
 Nos sirve para establecer valores por defecto para las columnas de la tabla, de forma que evitamos que se quede un valor nulo en dicha columna.
 
@@ -816,7 +728,7 @@ CREATE TABLE people6 (
 );
 ```
 
-![image.png](Images/image63.png)
+![image.png](Images/image 63.png)
 
 ### 13.7 AUTO INCREMENT
 
@@ -838,8 +750,6 @@ CREATE TABLE people7 (
 
 ### 13.8 DROP TABLE
 
----
-
 ```sql
 CREATE TABLE people8(
 	name varchar(100) NOT NULL
@@ -849,8 +759,6 @@ DROP TABLE people8;
 ```
 
 ### 13.9 ALTER TABLE & ADD
-
----
 
 Con ALTER TABLE podemos modificar la estructura de la tabla.
 
@@ -877,8 +785,6 @@ Si consultamos la tabla:
 
 ### 13.11 RENAME COLUMN
 
----
-
 Este sirve para renombrar un campo.
 
 ```sql
@@ -886,11 +792,9 @@ ALTER TABLE people8
 RENAME COLUMN surname TO description;
 ```
 
-![image.png](Images/image65.png)
+![image.png](Images/image 65.png)
 
 ### 13.12 MODIFY COLUMN
-
----
 
 Este en cambio sirve para actualizar el tipo de un campo.
 
@@ -899,15 +803,13 @@ ALTER TABLE people8
 MODIFY COLUMN description varchar(250);
 ```
 
-![image.png](Images/image66.png)
+![image.png](Images/image 66.png)
 
 ### 13.13 DROP COLUMN
-
----
 
 ```sql
 ALTER TABLE people8
 DROP COLUMN description;
 ```
 
-![image.png](Images/image67.png)
+![image.png](Images/image 67.png)
