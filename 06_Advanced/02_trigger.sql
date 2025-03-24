@@ -22,3 +22,5 @@ END;
 delimiter ;
 
 UPDATE users SET email = "mouredev@gmail.com" WHERE user_id = 1;
+
+DROP TRIGGER tg_email;
