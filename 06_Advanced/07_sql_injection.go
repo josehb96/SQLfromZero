@@ -11,7 +11,7 @@ import (
 )
 
 
-func main() {
+func sql_injection() {
 
 	// Cargar variables de entorno desde el archivo .env
 	err := godotenv.Load()
@@ -44,39 +44,5 @@ func main() {
 	}
 
 	fmt.Println("Connected to the database successfully!")
-
-	// Iteramos sobre los resultados de la consulta 
-	rows, err := db.Query("SELECT user_id, name, email FROM users")
-	if err != nil {
-		log.Fatal("Error querying the database", err)
-	}
-
-	defer rows.Close()
-
-	fmt.Println("\nList of users:")
-	for rows.Next() {
-		var user_id int
-		var name string
-		var email sql.NullString // Permite manejar valores nulos en email 
-		
-		// Escanear los valores de cada fila
-		if err := rows.Scan(&user_id, &name, &email); err != nil {
-			log.Fatal("Error scanning row", err)
-		}
-
-		// Si el email es NULL, asignamos un valor por defecto
-		emailValue := email.String
-		if !email.Valid {
-			emailValue = "(without email)"
-		}
-
-		// Imprimir los datos del usuario
-		fmt.Printf("ID: %d | Username: %s | Email: %s\n", user_id, name, emailValue)
-	}
-
-	// Verificar si hubo errores durante la iteración
-	if err := rows.Err(); err != nil {
-		log.Fatal("Error iterating over rows", err)
-	}
 
 }
