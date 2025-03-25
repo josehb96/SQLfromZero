@@ -1,18 +1,16 @@
-package main
+package sql_injection
 
 import (
+	"database/sql"
 	"fmt"
 	"log"
-	"database/sql"
 	"os"
 
-	"github.com/joho/godotenv"
 	_ "github.com/go-sql-driver/mysql"
-	"hello_mysql_go/07_sql_injection" // Replace 'your_module_name' with the actual module name
+	"github.com/joho/godotenv"
 )
 
-
-func main() {
+func Print_User(user string) {
 
 	// Cargar variables de entorno desde el archivo .env
 	err := godotenv.Load()
@@ -28,7 +26,7 @@ func main() {
 	dbName := os.Getenv("DB_NAME")
 
 	// Configuración de la conexión (usuario:contraseña@tcp(host:puerto)/nombre_base_datos)
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPassword, dbHost, dbPort, dbName) 
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
 
 	// Abrir la conexión a la base de datos
 	db, err := sql.Open("mysql", dsn)
@@ -46,11 +44,13 @@ func main() {
 
 	fmt.Println("Connected to the database successfully!")
 
-	// Iteramos sobre los resultados de la consulta 
-	rows, err := db.Query("SELECT user_id, name, email FROM users")
+	// Iteramos sobre los resultados de la consulta
+	rows, err := db.Query("SELECT user_id, name, email FROM users WHERE name = ?", user)
 	if err != nil {
 		log.Fatal("Error querying the database", err)
 	}
+
+	fmt.Println("Query: SELECT user_id, name, email FROM users WHERE name = ?", user)
 
 	defer rows.Close()
 
@@ -58,8 +58,8 @@ func main() {
 	for rows.Next() {
 		var user_id int
 		var name string
-		var email sql.NullString // Permite manejar valores nulos en email 
-		
+		var email sql.NullString // Permite manejar valores nulos en email
+
 		// Escanear los valores de cada fila
 		if err := rows.Scan(&user_id, &name, &email); err != nil {
 			log.Fatal("Error scanning row", err)
@@ -79,7 +79,5 @@ func main() {
 	if err := rows.Err(); err != nil {
 		log.Fatal("Error iterating over rows", err)
 	}
-
-	sql_injection.Print_User("'; UPDATE users SET age = 15 WHERE user_id = 1; --")
 
 }
