@@ -1,4 +1,4 @@
-# Curso de SQL y BD Brais Moure (2024)
+# Curso de SQL y Bases de datos
 
 ## 1. Bases de datos SQL
 
