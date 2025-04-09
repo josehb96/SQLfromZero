@@ -61,17 +61,17 @@ Hacemos **sudo apt install mysql-server**
 
 Comprobamos si el servicio mysql está funcionando:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image.png)
+![image.png](images/image.png)
 
 Comprobamos la versión de mysql instalada:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%201.png)
+![image.png](images/image%201.png)
 
 ## 5. Primeros pasos
 
 Con todo esto ya podemos interactuar con una base de datos.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%202.png)
+![image.png](images/image%202.png)
 
 ¿Podemos manejar una base de datos sólo con comados?
 
@@ -81,7 +81,7 @@ Sí.
 
 Sólo si somos muy pros o si tenemos que hacer algo muy concreto igual que desde una herramienta o interfaz gráfica quizás no somos capaces de resolver tan fácil.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%203.png)
+![image.png](images/image%203.png)
 
 Como se puede ver, mysql ya tiene 4 bases de datos instaladas por defecto.
 
@@ -99,45 +99,45 @@ Existen infinidad de aplicaciones para interactuar con la base de datos, por eje
 
 Para el curso vamos a utilizar la herramienta de bases de datos propia de la gente que está desarrollando mysql: https://dev.mysql.com/downloads/workbench
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%204.png)
+![image.png](images/image%204.png)
 
 Pero al tratar de conectarme me surgió este error (Estaba usando Kubuntu 24.10)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%205.png)
+![image.png](images/image%205.png)
 
 Y al parecer (según ChatGPT), Ubuntu en algunas versiones, configura MySQL para que el usuario **root** use **auth_socket**, lo que significa que solo puedo identificarse desde la terminal con **sudo**.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%206.png)
+![image.png](images/image%206.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%207.png)
+![image.png](images/image%207.png)
 
 Ahora si volvemos a intentar realizar la conexión:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%208.png)
+![image.png](images/image%208.png)
 
 Creamos una nueva base de datos o esquema de base de datos llamado hello_mysql:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%209.png)
+![image.png](images/image%209.png)
 
 ## 7. Inicialización de datos
 
 Creamos una nueva conexión que nos dirija directamente a la base de datos que acabamos de crear:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2010.png)
+![image.png](images/image%2010.png)
 
 Y ya la tenemos disponible:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2011.png)
+![image.png](images/image%2011.png)
 
 Usamos esta nueva conexión y creamos una nueva tabla en “hello_mysql”. usando la interfaz gráfica.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2012.png)
+![image.png](images/image%2012.png)
 
 Nota: El tipo de dato “date” representa una fecha sin hora
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2013.png)
+![image.png](images/image%2013.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2014.png)
+![image.png](images/image%2014.png)
 
 Si nos fijamos en los iconos, vemos una “i” que sirve para ver la información de la tabla, una “llave” que sirve para modificar directamente desde la interfaz dicha tabla y el icono de la derecha sirve para consultar el contenido de dicha tabla.
 
@@ -147,7 +147,7 @@ Nota: El auto increment incrementa a partir del último identificador que nosotr
 
 Rellenamos la tabla usando la interfaz:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2015.png)
+![image.png](images/image%2015.png)
 
 ## 8. Consulta de datos: SELECT
 
@@ -187,7 +187,7 @@ SELECT DISTINCT age from users;
 SELECT DISTINCT name from users;
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2016.png)
+![image.png](images/image%2016.png)
 
 Como se puede ver a pesar de que teníamos 2 users con la misma edad, no nos muestra el 15 dos veces, ya que únicamente muestra resultados que sean distintos.
 
@@ -195,11 +195,11 @@ Como se puede ver a pesar de que teníamos 2 users con la misma edad, no nos mue
 
 Con el WHERE estamos limitando cuál es el criterio de los datos que nosotros queremos recuperar.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2017.png)
+![image.png](images/image%2017.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2018.png)
+![image.png](images/image%2018.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2019.png)
+![image.png](images/image%2019.png)
 
 ```sql
 SELECT * FROM users WHERE age = 15;
@@ -220,17 +220,17 @@ Por defecto se aplica el orden ASCENDENTE
 
 </aside>
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2020.png)
+![image.png](images/image%2020.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2021.png)
+![image.png](images/image%2021.png)
 
 Vamos a añadir el mismo email de Sara a Carlos Azaustre:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2022.png)
+![image.png](images/image%2022.png)
 
 Por lo tanto si lanzamos esta consulta:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2023.png)
+![image.png](images/image%2023.png)
 
 ```sql
 SELECT * FROM users ORDER BY age;
@@ -248,7 +248,7 @@ SELECT name FROM users WHERE email='sara@gmail.com' ORDER BY age DESC;
 
 Modificamos el email de Miriam para que sea un gmail:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2024.png)
+![image.png](images/image%2024.png)
 
 El comando LIKE nos sirve para definir una especie de contiene o se parece a, donde no tenemos el valor final.
 
@@ -266,11 +266,11 @@ El “%” significa que antes de él en la cadena de texto nos vale cualquier c
 
 </aside>
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2025.png)
+![image.png](images/image%2025.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2026.png)
+![image.png](images/image%2026.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2027.png)
+![image.png](images/image%2027.png)
 
 ```sql
 SELECT * FROM users WHERE email LIKE '%gmail.com';
@@ -284,15 +284,15 @@ SELECT * FROM users WHERE email LIKE '%@%';
 
 Si queremos consultar aquellos usuarios cuyo email no se “sara@gmail.com”:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2028.png)
+![image.png](images/image%2028.png)
 
 Añadiendo la condición AND para que sólo muestre los que tengan dicho email y cuya edad sea 15 años:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2029.png)
+![image.png](images/image%2029.png)
 
 Y si queremos consultar aquellos usuarios que cumplan una u otra condición, o ambas, entonces usamos OR:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2030.png)
+![image.png](images/image%2030.png)
 
 ```sql
 SELECT * FROM users WHERE NOT email = 'sara@gmail.com';
@@ -308,11 +308,11 @@ LIMIT sirve para limitar el número de resultados que nos va a mostrar la consul
 
 Un par de ejemplos:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2031.png)
+![image.png](images/image%2031.png)
 
 Esto sirve para casos donde la base de datos tiene una gran cantidad de datos (por ejemplo millones de usuarios) y queremos realizar una consulta, dado que de ser así, tardaría mucho en realizar la consulta.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2032.png)
+![image.png](images/image%2032.png)
 
 ```sql
 SELECT * FROM users LIMIT 3;
@@ -338,7 +338,7 @@ multilínea
 
 ### 10.2 NULL
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2033.png)
+![image.png](images/image%2033.png)
 
 ```sql
 SELECT * FROM users WHERE email IS NULL; 
@@ -350,7 +350,7 @@ SELECT * FROM users WHERE email IS NOT NULL AND age = 15;
 
 ### 10.3 MIN, MAX
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2034.png)
+![image.png](images/image%2034.png)
 
 ```sql
 SELECT MAX(age) FROM users;
@@ -360,7 +360,7 @@ SELECT MIN(age) FROM users;
 
 ### 10.4 COUNT
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2035.png)
+![image.png](images/image%2035.png)
 
 ```sql
 SELECT COUNT(*) FROM users;
@@ -370,7 +370,7 @@ SELECT COUNT(age) FROM users;
 
 ### 10.5 SUM
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2036.png)
+![image.png](images/image%2036.png)
 
 ```sql
 SELECT SUM(age) FROM users;
@@ -378,7 +378,7 @@ SELECT SUM(age) FROM users;
 
 ### 10.6 AVG
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2037.png)
+![image.png](images/image%2037.png)
 
 ```sql
 SELECT AVG(age) FROM users;
@@ -388,7 +388,7 @@ SELECT AVG(age) FROM users;
 
 El comando IN es capaz de hacer un filtrado en el que nosotros conocemos cuáles son precisamente los datos por los que hay que filtrar. Es una especie de límite basado en uno o varios elementos que nosotros conocemos.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2038.png)
+![image.png](images/image%2038.png)
 
 ```sql
 SELECT * FROM users WHERE name IN ('brais', 'sara');
@@ -398,7 +398,7 @@ SELECT * FROM users WHERE name IN ('brais', 'sara');
 
 Este comando nos sirve para encontrar resultados que se comprenden entre 2 valores, un valor mínimo y un valor máximo. 
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2039.png)
+![image.png](images/image%2039.png)
 
 ```sql
 SELECT * FROM users WHERE age BETWEEN 20 AND 30;
@@ -413,7 +413,7 @@ En SQL podemos usar tanto comillas simples como dobles.
 
 </aside>
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2040.png)
+![image.png](images/image%2040.png)
 
 ```sql
 SELECT name, init_date AS "Fecha de inicio en programación" FROM users WHERE name = "Brais";
@@ -427,11 +427,11 @@ Existe una ligera variación dentro de ALIAS que nos permite concatenar cadenas,
 
 Por ejemplo, ¿Cómo podríamos concatenar en una misma columna el nombre y el apellido?
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2041.png)
+![image.png](images/image%2041.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2042.png)
+![image.png](images/image%2042.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2043.png)
+![image.png](images/image%2043.png)
 
 ```sql
 SELECT name, init_date AS "Fecha de inicio en programación" FROM users WHERE name = "Brais";
@@ -451,15 +451,15 @@ Agrupa filas que tienen mismos valores.
 
 Buscamos las máximas edades de cada grupo:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2044.png)
+![image.png](images/image%2044.png)
 
 Contamos las edades:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2045.png)
+![image.png](images/image%2045.png)
 
 Contamos las edades y además ordenamos de forma ascendente:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2046.png)
+![image.png](images/image%2046.png)
 
 Y si además ponemos una restricción para que sólo nos muestre las edades superiores a 15:
 
@@ -484,7 +484,7 @@ Los HAVING se usan bastante con los GROUP BY.
 
 </aside>
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2047.png)
+![image.png](images/image%2047.png)
 
 ```sql
 SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
@@ -494,15 +494,15 @@ SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
 
 Un CASE nos permite ejecutar una lógica concreta en función de una condición. 
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2048.png)
+![image.png](images/image%2048.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2049.png)
+![image.png](images/image%2049.png)
 
 Añadimos un nuevo usuario a la tabla users llamado “Kontrol” que tiene 18 años.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2050.png)
+![image.png](images/image%2050.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2051.png)
+![image.png](images/image%2051.png)
 
 ```sql
 SELECT *,
@@ -530,7 +530,7 @@ FROM users;
 
 ### 10.14 IFNULL
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2052.png)
+![image.png](images/image%2052.png)
 
 ```sql
 SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
@@ -546,9 +546,9 @@ SELECT COUNT(age) FROM users HAVING COUNT(age) > 3;
 
 Vemos como antes de la última ejecución, si intentábamos insertar el user_id 7 nos daba error, puesto que en la clave primaria no puede haber ni nulos ni duplicados.
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2053.png)
+![image.png](images/image%2053.png)
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2054.png)
+![image.png](images/image%2054.png)
 
 ```sql
 INSERT INTO users (user_id, name, surname) VALUES (8, 'María', 'López');
@@ -560,7 +560,7 @@ INSERT INTO users (user_id, name, surname) VALUES (11, 'El', 'Merma');
 
 Después de los inserts el estado de la tabla es el siguiente:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2055.png)
+![image.png](images/image%2055.png)
 
 ### 11.2 UPDATE
 
@@ -571,7 +571,7 @@ Los UPDATE siempre se hacen con una regla de filtrado
 
 </aside>
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2056.png)
+![image.png](images/image%2056.png)
 
 ```sql
 UPDATE users SET age = '21' WHERE user_id = 11;
@@ -583,7 +583,7 @@ UPDATE users SET age = 20, init_date = '2020-10-12' WHERE user_id = 11;
 
 Tras ejecutar las sentencias UPDATE la tabla users nos queda así:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2057.png)
+![image.png](images/image%2057.png)
 
 ### 11.3 DELETE
 
@@ -620,7 +620,7 @@ Para no interferir con el trabajo realizado previamente, vamos a crear de nuevo 
 
 Además, vamos a crear una nueva conexión en MySQL Workbench que vaya directamente a la base de datos “test”:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2058.png)
+![image.png](images/image%2058.png)
 
 ### 13.1 CREATE TABLE
 
@@ -634,7 +634,7 @@ CREATE TABLE people (
 );
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2059.png)
+![image.png](images/image%2059.png)
 
 ### 13.2 NOT NULL
 
@@ -652,7 +652,7 @@ CREATE TABLE people2 (
 );
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2060.png)
+![image.png](images/image%2060.png)
 
 ### 13.3 UNIQUE
 
@@ -669,7 +669,7 @@ CREATE TABLE people3 (
 );
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2061.png)
+![image.png](images/image%2061.png)
 
 ### 13.4 PRIMARY KEY
 
@@ -706,7 +706,7 @@ CREATE TABLE people5 (
 
 De hecho si comprobamos el script de creación de la tabla:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2062.png)
+![image.png](images/image%2062.png)
 
 ### 13.6 DEFAULT
 
@@ -726,7 +726,7 @@ CREATE TABLE people6 (
 );
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2063.png)
+![image.png](images/image%2063.png)
 
 ### 13.7 AUTO INCREMENT
 
@@ -777,7 +777,7 @@ ADD surname varchar(150);
 
 Si consultamos la tabla:
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2064.png)
+![image.png](images/image%2064.png)
 
 ### 13.11 RENAME COLUMN
 
@@ -788,7 +788,7 @@ ALTER TABLE people8
 RENAME COLUMN surname TO description;
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2065.png)
+![image.png](images/image%2065.png)
 
 ### 13.12 MODIFY COLUMN
 
@@ -799,7 +799,7 @@ ALTER TABLE people8
 MODIFY COLUMN description varchar(250);
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2066.png)
+![image.png](images/image%2066.png)
 
 ### 13.13 DROP COLUMN
 
@@ -808,4 +808,4 @@ ALTER TABLE people8
 DROP COLUMN description;
 ```
 
-![image.png](Curso%20de%20SQL%20y%20BD%20Brais%20Moure%20(2024)%20b90701868ad8485da9a1d73da24c0529/image%2067.png)
+![image.png](images/image%2067.png)
